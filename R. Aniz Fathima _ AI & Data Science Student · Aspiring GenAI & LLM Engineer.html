@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>R. Aniz Fathima | AI & Data Science Student · Aspiring GenAI & LLM Engineer</title>
+<meta name="description" content="Portfolio of R. Aniz Fathima, B.Tech AI & Data Science student at Takshashila University, aspiring Generative AI and LLM engineer.">
+<meta property="og:title" content="R. Aniz Fathima | AI & Data Science Portfolio">
+<meta property="og:description" content="Building my future in AI, Generative AI & Intelligent Systems.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0812">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c3aed'/%3E%3Ctext x='16' y='22' font-size='14' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EAF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ CONFIG-ready design tokens ============ */
+:root{
+  --bg:#07060c; --bg-2:#0e0b18; --surface:#14111f; --surface-2:#1b1729;
+  --border:rgba(167,139,250,.14); --border-strong:rgba(167,139,250,.32);
+  --text:#f5f3ff; --muted:#a8a3bd; --subtle:#6f6a86;
+  --accent:#8b5cf6; --accent-2:#a78bfa; --accent-deep:#5b21b6;
+  --radius:16px; --radius-sm:10px; --max:1120px;
+  --font:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;overflow-x:hidden;
+  background-image:radial-gradient(1200px 600px at 85% -10%,rgba(124,58,237,.14),transparent 60%),radial-gradient(900px 500px at -10% 30%,rgba(91,33,182,.10),transparent 60%);background-attachment:fixed}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:110px 0}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2);font-weight:600;margin-bottom:12px}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.15}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:14px}
+.lead{color:var(--muted);max-width:640px}
+.section-head{margin-bottom:48px}
+
+/* ============ Buttons ============ */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s var(--ease),background .2s,border-color .2s,color .2s;font-family:inherit}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#7c3aed;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border-strong)}
+.btn-ghost:hover{border-color:var(--accent-2);transform:translateY(-2px)}
+.btn:disabled,.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed;transform:none}
+
+/* ============ Header ============ */
+header.site{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(7,6,12,.7);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-weight:800;text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.brand span.mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));display:grid;place-items:center;font-size:.8rem;color:#fff}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:500;transition:color .2s;padding:6px 0;position:relative}
+.nav ul a:hover,.nav ul a.active{color:var(--text)}
+.nav ul a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent-2);border-radius:2px}
+.menu-btn{display:none;background:none;border:1px solid var(--border-strong);color:var(--text);width:44px;height:44px;border-radius:12px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn svg{width:22px;height:22px}
+
+/* ============ Hero ============ */
+.hero{min-height:calc(100vh - 72px);display:flex;align-items:center;padding:80px 0}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:18px}
+.hero h1 .grad{background:linear-gradient(90deg,var(--accent-2),#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.headline{font-size:1.2rem;color:var(--text);font-weight:500;margin-bottom:16px}
+.hero p.intro{color:var(--muted);max-width:580px;margin-bottom:10px}
+.tagline{color:var(--subtle);font-size:.95rem;margin:18px 0 34px;font-style:italic}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.resume-note{font-size:.82rem;color:var(--subtle);margin-top:12px}
+.photo-card{position:relative;justify-self:center;width:min(360px,80vw);aspect-ratio:4/5;border-radius:28px;background:linear-gradient(160deg,var(--surface-2),var(--surface));border:1px solid var(--border-strong);overflow:hidden;box-shadow:0 30px 80px -30px rgba(124,58,237,.45)}
+.photo-card img,.photo-card svg{width:100%;height:100%;object-fit:cover}
+.photo-card::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(to top,rgba(7,6,12,.85),transparent)}
+.photo-badge{position:absolute;left:18px;bottom:18px;z-index:2;background:rgba(20,17,31,.8);border:1px solid var(--border-strong);border-radius:12px;padding:10px 14px;font-size:.85rem;backdrop-filter:blur(8px)}
+.photo-badge strong{display:block;font-size:.95rem}
+.photo-badge span{color:var(--muted);font-size:.8rem}
+.ai-lines{position:absolute;inset:0;opacity:.35;pointer-events:none;z-index:0}
+
+/* ============ Cards ============ */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .3s,transform .3s var(--ease)}
+.card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.chip{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);font-size:.88rem;color:var(--text);margin:4px 4px 4px 0}
+.chip.accent{border-color:var(--border-strong);color:var(--accent-2)}
+.icon{width:42px;height:42px;border-radius:12px;background:rgba(139,92,246,.12);border:1px solid var(--border-strong);display:grid;place-items:center;color:var(--accent-2);margin-bottom:18px}
+.icon svg{width:20px;height:20px}
+.label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--subtle);font-weight:600;margin-bottom:12px}
+
+/* ============ About ============ */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:1.02rem}
+.info-list{list-style:none}
+.info-list li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);font-size:.95rem}
+.info-list li:last-child{border-bottom:0}
+.info-list span{color:var(--subtle)}
+.info-list strong{text-align:right;font-weight:600}
+.explore{margin-top:20px}
+
+/* ============ Skills ============ */
+.skill-group h3{font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.skill-group .icon{margin-bottom:0;width:36px;height:36px}
+.interest-card{background:linear-gradient(160deg,rgba(139,92,246,.12),var(--surface) 60%);}
+
+/* ============ Achievements timeline ============ */
+.timeline{position:relative;padding-left:30px;max-width:820px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--border))}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-item::before{content:"";position:absolute;left:-27px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent-2);box-shadow:0 0 0 4px rgba(139,92,246,.15)}
+.tl-item.featured .card{border-color:var(--border-strong);background:linear-gradient(135deg,rgba(139,92,246,.16),var(--surface) 65%)}
+.tl-tag{display:inline-block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);font-weight:700;margin-bottom:6px}
+.tl-item h3{font-size:1.12rem;margin-bottom:4px}
+.tl-item p{color:var(--muted);font-size:.95rem}
+.badge-top{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(139,92,246,.18);color:#ddd6fe;margin-top:10px}
+
+/* ============ Certifications ============ */
+.cert{display:flex;flex-direction:column;gap:12px}
+.cert .org{font-size:.88rem;color:var(--muted)}
+.cert .status{margin-top:auto;font-size:.82rem;color:var(--subtle);border-top:1px dashed var(--border);padding-top:12px}
+.cert .status.pending{color:#c4b5fd}
+
+/* ============ Education ============ */
+.edu-card{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+.edu-card .icon{margin:0}
+.edu-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.edu-meta .chip{margin:0}
+.intern{margin-top:24px}
+
+/* ============ Languages ============ */
+.langs{display:flex;flex-wrap:wrap;gap:14px}
+.lang{display:flex;align-items:center;gap:12px;padding:14px 20px}
+.lang .flag{font-size:1.2rem}
+
+/* ============ Contact ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:28px}
+.contact-links{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.contact-link{display:flex;align-items:center;gap:14px;text-decoration:none;padding:16px 18px;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--border);transition:border-color .2s,transform .2s var(--ease)}
+.contact-link:hover{border-color:var(--border-strong);transform:translateX(4px)}
+.contact-link small{display:block;color:var(--subtle);font-size:.78rem}
+.contact-link strong{font-weight:600;word-break:break-all}
+form.contact{display:grid;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.88rem;font-weight:500;color:var(--muted)}
+.field input,.field textarea{font:inherit;color:var(--text);background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px 14px;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(139,92,246,.18)}
+.field .err{color:#fca5a5;font-size:.8rem;min-height:1em}
+.field.invalid input,.field.invalid textarea{border-color:#f87171}
+.form-note{font-size:.82rem;color:var(--subtle)}
+
+/* ============ Footer ============ */
+footer{border-top:1px solid var(--border);padding:36px 0;color:var(--subtle);font-size:.88rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer p.tagline-foot{color:var(--muted)}
+
+/* ============ Reveal ============ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ Responsive ============ */
+@media (max-width:980px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .photo-card{order:-1;width:min(300px,70vw)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:800px){
+  .menu-btn{display:inline-flex}
+  .nav ul{position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:rgba(10,8,18,.97);border-bottom:1px solid var(--border);padding:8px 24px 18px;display:none}
+  .nav ul.open{display:flex}
+  .nav ul a{display:block;padding:14px 0;border-bottom:1px solid var(--border)}
+  .nav ul a.active::after{display:none}
+  section{padding:84px 0}
+}
+@media (max-width:620px){
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+  .edu-card{grid-template-columns:1fr}
+  .hero{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
+/* ===== Botanical white theme (overrides) ===== */
+:root{
+  --bg:#fdfbf6; --bg-2:#faf7f0; --surface:#ffffff; --surface-2:#f6f2ea;
+  --border:rgba(95,119,88,.16); --border-strong:rgba(95,119,88,.34);
+  --text:#2f3b33; --muted:#5d6a61; --subtle:#8b948d;
+  --accent:#5f7758; --accent-2:#6b8462; --accent-deep:#4a5e44;
+  --blush:#b07d7f; --champagne:#c9b48a;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+}
+body{background:#fdfbf6;background-image:none;color:var(--text)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:0}
+h1{font-size:clamp(3rem,6.4vw,4.9rem);line-height:1.05}
+h2{font-size:clamp(2.2rem,4vw,3rem)}
+h3{font-weight:600}
+.hero,#about,#skills,#contact{position:relative;overflow:hidden}
+.wrap{position:relative;z-index:1}
+header.site{background:rgba(253,251,246,.88);border-bottom:1px solid var(--border)}
+.nav ul a:hover,.nav ul a.active{color:var(--accent-deep)}
+.nav ul a.active::after{background:var(--blush)}
+.brand span.mark{background:var(--accent);box-shadow:0 0 0 3px rgba(176,125,127,.15)}
+.hero h1 .grad{background:linear-gradient(90deg,#5f7758,#b07d7f);-webkit-background-clip:text;background-clip:text}
+.hero::after{content:"";position:absolute;right:-40px;bottom:-30px;width:380px;height:380px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%235f7758' stroke-width='1' opacity='.9'%3E%3Cpath d='M100 195 C98 140 102 90 100 20'/%3E%3Cpath d='M100 150 C75 140 62 120 60 95 C80 100 96 118 100 150'/%3E%3Cpath d='M100 120 C125 110 138 90 140 65 C120 70 104 90 100 120'/%3E%3Cpath d='M100 80 C84 72 78 58 78 40 C94 46 100 60 100 80'/%3E%3C/g%3E%3Ccircle cx='100' cy='18' r='6' fill='%23e8c8c3'/%3E%3Ccircle cx='140' cy='63' r='5' fill='%23e8c8c3'/%3E%3C/svg%3E") no-repeat center/contain;opacity:.45;pointer-events:none;z-index:0}
+#about::before{content:"";position:absolute;top:-20px;left:-20px;width:240px;height:240px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%236b8462' stroke-width='1'%3E%3Cpath d='M20 20 C60 60 90 100 120 180'/%3E%3Cpath d='M50 60 C40 40 55 25 75 30 C70 48 60 58 50 60'/%3E%3Cpath d='M80 110 C100 95 115 100 118 120 C100 124 88 120 80 110'/%3E%3C/g%3E%3Ccircle cx='75' cy='30' r='4' fill='%23e8c8c3'/%3E%3C/svg%3E") no-repeat center/contain;opacity:.4;pointer-events:none;z-index:0}
+#contact::after{content:"";position:absolute;bottom:-20px;right:-20px;width:260px;height:260px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%236b8462' stroke-width='1'%3E%3Cpath d='M180 180 C140 140 110 100 80 20'/%3E%3Cpath d='M150 130 C160 150 145 165 125 160 C128 142 138 132 150 130'/%3E%3Cpath d='M110 80 C90 90 85 105 90 118 C104 110 112 96 110 80'/%3E%3C/g%3E%3Ccircle cx='125' cy='160' r='4' fill='%23e8c8c3'/%3E%3C/svg%3E") no-repeat center/contain;opacity:.4;pointer-events:none;z-index:0}
+.card{background:#fff;border-color:var(--border);box-shadow:0 1px 2px rgba(47,59,51,.04),0 14px 34px -22px rgba(47,59,51,.16);border-radius:20px}
+.card:hover{box-shadow:0 18px 40px -22px rgba(47,59,51,.22)}
+.icon{background:#eef2ea;border-color:var(--border-strong);color:var(--accent)}
+.chip{background:#faf7f0;border-color:var(--border);color:var(--text)}
+.chip.accent{background:#f6ece8;border-color:rgba(176,125,127,.3);color:#7a5558}
+.interest-card{background:linear-gradient(160deg,#f6ece8,#fff 65%)}
+.tl-item.featured .card{background:linear-gradient(135deg,#eef2ea,#fff 65%);border-color:var(--border-strong)}
+.timeline::before{background:linear-gradient(var(--accent),rgba(95,119,88,.12))}
+.tl-item::before{background:#fff;border-color:var(--accent);box-shadow:0 0 0 4px rgba(95,119,88,.12)}
+.tl-tag{color:var(--blush)}
+.eyebrow{color:var(--accent);letter-spacing:.2em}
+.btn-primary{background:var(--accent);box-shadow:0 8px 20px -10px rgba(95,119,88,.6)}
+.btn-primary:hover{background:var(--accent-deep)}
+.btn-ghost{background:rgba(255,255,255,.6);border-color:var(--border-strong);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep)}
+.photo-card{background:linear-gradient(160deg,#f6f2ea,#ffffff);border-color:var(--border-strong);box-shadow:0 24px 60px -34px rgba(95,119,88,.4)}
+.photo-card::after{background:linear-gradient(to top,rgba(253,251,246,.92),transparent)}
+.photo-badge{background:rgba(255,255,255,.92);border-color:var(--border)}
+.photo-badge span{color:var(--muted)}
+#photo-placeholder stop:first-child{stop-color:#f6f2ea}
+#photo-placeholder stop:last-child{stop-color:#ece4d6}
+#photo-placeholder circle,#photo-placeholder path{stroke:#9fb08f}
+#photo-placeholder text{fill:#6b8462}
+.hero-contact{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:22px;font-size:.92rem;color:var(--muted)}
+.hero-contact a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--blush);padding-bottom:1px;transition:color .2s}
+.hero-contact a:hover{color:var(--accent-deep)}
+.hero-contact span{color:var(--champagne)}
+.field input,.field textarea{background:#fff;border-color:var(--border)}
+.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(95,119,88,.14)}
+.contact-link{background:#fff;border-color:var(--border)}
+.contact-link:hover{border-color:var(--accent)}
+.info-list li{border-color:var(--border)}
+.lang{background:#fff}
+footer{background:transparent;border-color:var(--border)}
+.menu-btn{background:#fff}
+@media (max-width:800px){
+  .nav ul{background:#fdfbf6}
+  .hero::after{width:220px;height:220px;opacity:.3}
+  #about::before,#contact::after{width:140px;height:140px;opacity:.25}
+}
+/* ===== Circular profile photo ===== */
+.photo-card{width:min(340px,72vw);aspect-ratio:1/1;border-radius:50%;padding:0;background:#fff;border:1.5px solid #5f7758;box-shadow:0 0 0 8px #fdfbf6,0 0 0 9px rgba(95,119,88,.35),0 26px 50px -30px rgba(95,119,88,.45);overflow:visible;position:relative}
+.photo-card img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.photo-card::after,.photo-badge,#photo-placeholder{display:none}
+.photo-card::before{content:"";position:absolute;right:-22px;bottom:-16px;width:92px;height:92px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%235f7758' stroke-width='1.2'%3E%3Cpath d='M20 90 C30 60 45 40 80 15'/%3E%3Cpath d='M40 65 C30 55 32 42 45 40 C48 52 45 60 40 65'/%3E%3Cpath d='M60 42 C66 30 78 28 84 34 C78 44 68 46 60 42'/%3E%3C/g%3E%3Ccircle cx='80' cy='15' r='4' fill='%23e8c8c3'/%3E%3C/svg%3E") no-repeat center/contain;z-index:3;pointer-events:none}
+@media (max-width:980px){.photo-card{width:min(300px,64vw)}}
+@media (max-width:620px){.photo-card{width:min(240px,62vw)}.photo-card::before{width:64px;height:64px;right:-14px;bottom:-10px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===== CONFIG: edit these to personalise ===== -->
+<script>
+const SITE = {
+  // Put your resume file path or URL here (e.g. "assets/Aniz-Fathima-Resume.pdf"). Leave "" until you have one.
+  resumeUrl: "",
+  // Put your photo path here (e.g. "assets/aniz.jpg"). Leave "" to show the placeholder.
+  photoUrl: "",
+  email: "anizfathima13@gmail.com",
+  linkedin: "https://www.linkedin.com/in/aniz-fathima-r-49293632b",
+  copyrightYear: 2026
+};
+</script>
+
+<header class="site">
+  <nav class="wrap nav" aria-label="Primary">
+    <a href="#home" class="brand" aria-label="Aniz Fathima home"><span class="mark">AF</span><span>Aniz Fathima</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu" id="menu-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="menu-icon" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul id="nav-list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero" style="padding-top:60px">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <p class="eyebrow">Artificial Intelligence &amp; Data Science</p>
+      <h1>Hi, I’m <span class="grad">Aniz Fathima.</span></h1>
+      <p class="headline">Building my future in AI, Generative AI &amp; Intelligent Systems.</p>
+      <p class="intro">I’m a B.Tech Artificial Intelligence and Data Science student at Takshashila University, passionate about exploring AI, machine learning, and practical technology solutions. I enjoy learning new concepts, collaborating with others, and turning ideas into meaningful applications.</p>
+      <p class="tagline">Curious mind. Continuous learner. Aspiring AI Engineer.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#skills">Explore My Skills
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a class="btn btn-ghost" href="/_blob/21203df333a297f6f94b71fb9fc2ed6d" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn btn-ghost" href="#contact">Contact Me</a>
+      </div>
+      <p class="resume-note" id="resume-note"></p>
+      <div class="hero-contact"><a href="mailto:anizfathima13@gmail.com">anizfathima13@gmail.com</a><span aria-hidden="true">✦</span><a href="https://www.linkedin.com/in/aniz-fathima-r-49293632b" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+    </div>
+    <div class="reveal">
+      <figure class="photo-card" id="photo-card"><img src="/_blob/861ba3eff5630023960fdcd24b1ad8a1" alt="Portrait of R. Aniz Fathima" width="480" height="480" style="object-position:50% 30%">
+        <svg id="photo-placeholder" viewBox="0 0 400 500" role="img" aria-label="Profile photo placeholder">
+          <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1f4a"/><stop offset="1" stop-color="#120e20"/></linearGradient></defs>
+          <rect width="400" height="500" fill="url(#pg)"/>
+          <circle cx="200" cy="190" r="72" fill="none" stroke="#a78bfa" stroke-opacity=".5" stroke-width="2"/>
+          <path d="M70 470c10-90 65-130 130-130s120 40 130 130" fill="none" stroke="#a78bfa" stroke-opacity=".5" stroke-width="2"/>
+          <text x="200" y="300" text-anchor="middle" font-family="Inter,Arial" font-size="18" fill="#c4b5fd" fill-opacity=".8">Add your photo</text>
+        </svg>
+        <figcaption class="photo-badge"><strong>R. Aniz Fathima</strong><span>B.Tech AI &amp; DS · Takshashila University</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="eyebrow">01 · Introduction</p><h2>About Me</h2></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I am a motivated B.Tech Artificial Intelligence and Data Science student at Takshashila University with a strong interest in Artificial Intelligence, Machine Learning, Generative AI, and Large Language Models. Through academic learning, technical events, and hackathon participation, I am exploring how technology can address practical problems.</p>
+        <p>I am eager to strengthen my technical foundation, gain hands-on industry experience, and grow into an AI engineer who builds useful and responsible technology.</p>
+        <p class="actions" style="margin-bottom:28px"><a class="btn btn-ghost" href="#resume">View / Download Resume</a></p>
+        <p class="label" style="margin-top:28px">Currently exploring</p>
+        <div>
+          <span class="chip accent">Generative AI</span><span class="chip accent">Large Language Models</span><span class="chip accent">AI &amp; Machine Learning</span><span class="chip accent">Practical AI applications</span>
+        </div>
+      </div>
+      <aside class="card reveal" aria-label="Academic information">
+        <p class="label">Academic information</p>
+        <ul class="info-list">
+          <li><span>Degree</span><strong>B.Tech — AI &amp; Data Science</strong></li>
+          <li><span>Institution</span><strong>Takshashila University</strong></li>
+          <li><span>Graduation</span><strong>2028</strong></li>
+          <li><span>CGPA</span><strong>8.46 / 10</strong></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="eyebrow">02 · Capabilities</p><h2>Skills &amp; Technical Interests</h2><p class="lead">My current foundation, presented as learning progress rather than mastery.</p></div>
+    <div class="grid-3">
+      <div class="card skill-group reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div><h3>Programming</h3><span class="chip">Python</span><span class="chip">SQL</span></div>
+      <div class="card skill-group reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div><h3>AI &amp; Data</h3><span class="chip">Machine Learning Fundamentals</span><span class="chip">Data Analysis</span><span class="chip">Predictive Modeling Fundamentals</span></div>
+      <div class="card skill-group reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></div><h3>Tools</h3><span class="chip">Docker</span></div>
+      <div class="card skill-group reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div><h3>Professional skills</h3><span class="chip">Problem Solving</span><span class="chip">Analytical Thinking</span><span class="chip">Team Collaboration</span><span class="chip">Technical Presentation</span></div>
+      <div class="card interest-card skill-group reveal" style="grid-column:span 2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg></div><h3>Areas of Interest</h3><span class="chip accent">Generative AI</span><span class="chip accent">Large Language Models (LLMs)</span><span class="chip accent">Intelligent Systems</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<section id="achievements">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="eyebrow">03 · Recognition</p><h2>Achievements &amp; Recognition</h2></div>
+    <ol class="timeline" style="list-style:none">
+      <li class="tl-item featured reveal"><div class="card">
+        <span class="tl-tag">Top 50 Recognition</span>
+        <h3>VIT Resonance 2026</h3>
+        <p>Team TU-TITAN</p>
+      </div></li>
+      <li class="tl-item reveal"><div class="card"><span class="tl-tag">Round 1 Selection</span><h3>Ananda Vikatan Talent Examination</h3></div></li>
+      <li class="tl-item reveal"><div class="card"><span class="tl-tag">Certificate of Honor</span><h3>Technovation 2K25</h3></div></li>
+      <li class="tl-item reveal"><div class="card"><span class="tl-tag">Participant</span><h3>Smart India Hackathon (SIH) 2025</h3></div></li>
+      <li class="tl-item reveal"><div class="card"><span class="tl-tag">Participant</span><h3>24-Hour Hackathon</h3></div></li>
+      <li class="tl-item reveal"><div class="card"><span class="tl-tag">Participation</span><h3>Technical workshops, bootcamps &amp; university-level events</h3></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="eyebrow">04 · Learning</p><h2>Certifications &amp; Learning</h2></div>
+    <div class="grid-3">
+      <article class="card cert reveal"><div class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg></div><h3>Python 101 for Data Science</h3><p class="org">IBM</p></article>
+      <article class="card cert reveal"><div class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg></div><h3>Data Analysis with Python</h3><p class="org">IBM</p></article>
+      <article class="card cert reveal"><div class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg></div><h3>SQL and Relational Databases 101</h3><p class="org">IBM</p></article>
+      <article class="card cert reveal"><div class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg></div><h3>Docker Essentials: A Developer Introduction</h3><p class="org">IBM</p></article>
+      <article class="card cert reveal"><div class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg></div><h3>Predictive Modeling Fundamentals I</h3></article>
+      <article class="card cert reveal"><div class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg></div><h3>AI/ML Tech Bootcamp</h3><p class="org">Takshashila University × Xebia</p></article>
+      <article class="card cert reveal"><div class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg></div><h3>Human Resources and Development</h3><p class="org">NPTEL / SWAYAM</p><p class="status pending">Course completed — certificate pending.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION & INTERNSHIP ===== -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="eyebrow">05 · Education</p><h2>Education &amp; Internship</h2></div>
+    <article class="card edu-card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 9l10-5 10 5-10 5-10-5zM6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></div>
+      <div>
+        <h3 style="font-size:1.25rem">B.Tech — Artificial Intelligence &amp; Data Science</h3>
+        <p>Takshashila University · 2024–2028</p>
+        <div class="edu-meta">
+          <span class="chip accent">CGPA 8.46 / 10</span>
+          <span class="chip">Third year · Fifth semester</span>
+        </div>
+      </div>
+    </article>
+    <article class="card intern reveal">
+      <p class="label">Internship</p>
+      <h3>Artificial Intelligence Internship — Offer Received</h3>
+      <p>Organization: PlaceMantra</p>
+    </article>
+  </div>
+</section>
+
+<!-- ===== RESUME ===== -->
+<section id="resume" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal"><p class="eyebrow">Resume</p><h2>Curriculum Vitae</h2><p class="lead">View my CV in your browser, or open the PDF to download it.</p></div>
+    <div class="actions reveal" style="margin-bottom:24px"><a class="btn btn-primary" href="/_blob/21203df333a297f6f94b71fb9fc2ed6d" target="_blank" rel="noopener">Open / Download CV (PDF)</a></div>
+    <div class="card reveal" style="padding:10px"><iframe src="/_blob/21203df333a297f6f94b71fb9fc2ed6d#view=FitH" title="Aniz Fathima R CV (PDF preview)" style="width:100%;height:min(80vh,900px);border:0;border-radius:10px;background:#fff;display:block"></iframe></div>
+    <p class="resume-note">If the preview does not load on your device, use the button above.</p>
+  </div>
+</section>
+
+<!-- ===== LANGUAGES ===== -->
+<section id="languages" style="padding-top:0">
+  <div class="wrap">
+    <p class="label reveal">Languages</p>
+    <div class="langs reveal">
+      <div class="card lang"><span class="flag">🗣️</span><strong>Tamil</strong></div>
+      <div class="card lang"><span class="flag">🗣️</span><strong>English</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">06 · Contact</p>
+      <h2>Let’s Connect</h2>
+      <p class="lead">I’m interested in learning opportunities, AI/ML internships, collaborative opportunities, and connecting with people who are passionate about technology.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:anizfathima13@gmail.com">
+          <span class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span><small>Email</small><strong>anizfathima13@gmail.com</strong></span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/aniz-fathima-r-49293632b" target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v6M8 8v.01M12 17v-6m0 2a2 2 0 014 0v4"/></svg></span>
+          <span><small>LinkedIn</small><strong>linkedin.com/in/aniz-fathima-r-49293632b</strong></span>
+        </a>
+        <div class="contact-link" style="cursor:default">
+          <span class="icon" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span><small>Location</small><strong>Tamil Nadu, India</strong></span>
+        </div>
+      </div>
+    </div>
+    <form class="card contact reveal" id="contact-form" novalidate>
+      <div class="field" id="f-name"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name"></span></div>
+      <div class="field" id="f-email"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="err" id="e-email"></span></div>
+      <div class="field" id="f-msg"><label for="message">Message</label><textarea id="message" name="message" required aria-describedby="e-msg"></textarea><span class="err" id="e-msg"></span></div>
+      <button class="btn btn-primary" type="submit" style="justify-self:start">Send message</button>
+      <p class="form-note" id="form-note">This form has no server yet. Sending opens your email app with your message ready to go.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p class="tagline-foot">Designed with curiosity and built for continuous learning.</p>
+    <p id="copy"></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // Copyright year (set in SITE config)
+  document.getElementById('copy').textContent = `© ${SITE.copyrightYear} Aniz Fathima. All rights reserved.`;
+
+  // Photo: use configured photo if provided
+  if (SITE.photoUrl) {
+    const fig = document.getElementById('photo-card');
+    const img = new Image();
+    img.alt = 'Portrait of R. Aniz Fathima';
+    img.onload = () => { document.getElementById('photo-placeholder').replaceWith(img); };
+    img.src = SITE.photoUrl;
+  }
+
+
+
+  // Mobile menu
+  const btn = document.getElementById('menu-btn');
+  const list = document.getElementById('nav-list');
+  const icon = document.getElementById('menu-icon');
+  const setOpen = (open) => {
+    list.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    icon.setAttribute('d', open ? 'M6 6l12 12M6 18L18 6' : 'M4 7h16M4 12h16M4 17h16');
+  };
+  btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+  list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { setOpen(false); btn.focus(); } });
+
+  // Active nav state
+  const links = [...document.querySelectorAll('#nav-list a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  const navObs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => s && navObs.observe(s));
+
+  // Reveal on scroll
+  const revObs = new IntersectionObserver((entries, o) => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); o.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+  // Contact form validation + email fallback (no backend)
+  const form = document.getElementById('contact-form');
+  const rules = {
+    name: { el: 'name', wrap: 'f-name', err: 'e-name', check: v => v.trim().length >= 2 || 'Please enter your name.' },
+    email: { el: 'email', wrap: 'f-email', err: 'e-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || 'Please enter a valid email address.' },
+    message: { el: 'message', wrap: 'f-msg', err: 'e-msg', check: v => v.trim().length >= 10 || 'Message should be at least 10 characters.' }
+  };
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true, first = null;
+    Object.values(rules).forEach(r => {
+      const input = document.getElementById(r.el);
+      const res = r.check(input.value);
+      const wrap = document.getElementById(r.wrap);
+      wrap.classList.toggle('invalid', res !== true);
+      input.setAttribute('aria-invalid', String(res !== true));
+      document.getElementById(r.err).textContent = res === true ? '' : res;
+      if (res !== true) { ok = false; first = first || input; }
+    });
+    if (!ok) { first.focus(); return; }
+    const n = form.name.value.trim(), em = form.email.value.trim(), msg = form.message.value.trim();
+    const body = `${msg}\n\n— ${n} (${em})`;
+    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent('Portfolio enquiry from ' + n)}&body=${encodeURIComponent(body)}`;
+    document.getElementById('form-note').textContent = 'Your email app should open with the message ready to send.';
+  });
+})();
+</script>
+</body>
+</html>
